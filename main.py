@@ -17,7 +17,7 @@ def pantalla():
 pantalla()
 
 
-def preguntas():
+def preguntas(puntaje):
     #lista de pregunta
 
     lpreguntas = list()
@@ -33,19 +33,24 @@ def preguntas():
     #lista de respuestas
     lrespuestas = list()
     lrespuestas = [32, 7, 37, 5, 13, 5]
-
+    
     npre = random.randint(0, 5)
     pre = lpreguntas[int(npre)]
     x = input(pre + ' :')
     if int(x) == lrespuestas[int(npre)]:
+        puntaje = puntaje + 50
+        print('puntaje : ' + str(puntaje))
         print('correcto')
-        preguntas()
+        preguntas(puntaje)
+        
+           
 
     else:
         print('Incorrecto')
         print('Termino el juego *')
-
+    
     #if(list(pre))
+    
 
-
-preguntas()
+puntaje=0
+preguntas(puntaje)
